@@ -40,7 +40,10 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -t flask-vulnerable-app .
-
+    # List docker image
+    - name: List Docker images
+      run: |
+        docker images
     # Run the Docker container (optional for testing)
     - name: Run Docker container
       run: |
