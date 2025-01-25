@@ -1,4 +1,6 @@
-Flask==2.1.0
-Flask-SQLAlchemy==2.5.1
-Flask-WTF==1.0.1
-Werkzeug==2.1.0
+Flask==2.1.2                # Web framework
+Flask-SQLAlchemy==2.5.1     # SQLAlchemy integration with Flask
+Flask-WTF==1.1.1            # Forms and CSRF protection
+WTForms==3.0.1              # Form handling
+Werkzeug==2.1.2             # Utilities like password hashing
+
