@@ -47,13 +47,21 @@ jobs:
     # Run the Docker container (optional for testing)
     - name: Run Docker container
       run: |
-        docker run -d -p 5000:5000 flask-vulnerable-app
+        docker run -d -p 5000:5000 --name flask-vulnerable-app-container flask-vulnerable-app
 
     # Check if the app is running (optional step to confirm the app is accessible)
     - name: Check if Flask app is running
       run: |
-        curl --fail http://localhost:5000 || exit 1
+        sleep 5
+        curl --fail http://localhost:5000 || || (docker logs flask-vulnerable-app-container && exit 1)
 
+      # Step 8: Clean up
+    - name: Stop and remove Docker container
+      if: always()
+      run: |
+        docker stop flask-vulnerable-app-container || true
+        docker rm flask-vulnerable-app-container || true
+          
     # Push the image to Docker Hub (optional, uncomment if needed)
     # - name: Login to Docker Hub
     #   uses: docker/login-action@v2
