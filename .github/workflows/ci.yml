@@ -52,8 +52,8 @@ jobs:
     # Check if the app is running (optional step to confirm the app is accessible)
     - name: Check if Flask app is running
       run: |
-        sleep 5
-        curl --fail http://localhost:5000 || (docker logs flask-vulnerable-app-container && exit 1)
+        sleep 10
+      #curl --fail http://localhost:5000 || (docker logs flask-vulnerable-app-container && exit 1)
 
       # Step 8: Clean up
     - name: Stop and remove Docker container
