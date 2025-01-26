@@ -1,4 +1,4 @@
-Flask==3.1.2                # Web framework
+Flask==3.1.0                # Web framework
 Flask-SQLAlchemy==3.1.1     # SQLAlchemy integration with Flask
 Flask-WTF==1.1.1            # Forms and CSRF protection
 WTForms==3.0.1              # Form handling
